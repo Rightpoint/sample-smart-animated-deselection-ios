@@ -90,8 +90,7 @@ extension UIViewController {
 
         // Grab the transition coordinator responsible for the current transition
         if let coordinator = transitionCoordinator() {
-            // Animate alongside the master view controller's view
-            coordinator.animateAlongsideTransitionInView(parentViewController?.view, animation: { context in
+            coordinator.animateAlongsideTransition( { context in
                 // Deselect the cells, with animations enabled if this is an animated transition
                 selectedIndexPaths.forEach {
                     tableView?.deselectRowAtIndexPath($0, animated: context.isAnimated())
